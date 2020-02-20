@@ -3,20 +3,23 @@
 {% block title %}test{% endblock title %}
 
 {% block content %}
-    <h4 class="mt-4 border-bottom">書籍の一覧</h4>
-    <a href="#" class="btn btn-primary btn-sm my-3">追加</a>
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">書籍名</th>
-          <th scope="col">出版社</th>
-          <th scope="col">ページ数</th>
-          <th scope="col">操作</th>
-        </tr>
-      </thead>
-      <tbody>
-        hello
-      </tbody>
-    </table>
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-10">
+                <a href="#" class="thumbnail logo">
+                    <img src="" alt="" class="img-responsive">
+                </a>
+            </div>
+        </div>
+        <div class="jumbotron">
+            <h1><small>テキスト、テキスト</small></br>
+                <strong>メインメッセージ</strong></h1>
+            <p>ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。ここに文章が入ります。</p>
+            <p><a class="btn btn-primary btn-lg" role="button">Sign Up</a> <a target="_blank" href="#"
+                    class="btn btn-lg btn-danger" role="button">Login</a></p>
+        </div>
+    </div>
+</div>
 {% endblock content %}

@@ -1,0 +1,98 @@
+/*------------------------------------*\
+	COMMONS CLASSES
+\*------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Roboto Slab', serif;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    margin-bottom: 1.1em;
+}
+
+.features,
+.blog,
+.gallery,
+.clients,
+.prefooter .container-fluid
+{
+    padding-top: 3.3em;
+    padding-bottom: 4.2em;
+}
+
+span.typcn::before, i.typcn::before
+{
+    font-size: 2em;
+}
+
+span.x2:before, i.x2:before
+{
+    font-size: 3.4em;
+}
+
+span.x3:before, i.x3:before
+{
+    font-size: 4.4em;
+}
+
+span.x4:before, i.x4:before
+{
+    font-size: 6em;
+}
+
+
+/*------------------------------------*\
+	lp
+\*------------------------------------*/
+
+.jumbotron
+{
+    background: none;
+    text-align: center;
+}
+
+.jumbotron h1,
+.jumbotron h2,
+.jumbotron h3,
+.jumbotron h4,
+.jumbotron h5,
+.jumbotron h6,
+.jumbotron small
+{
+    color: rgb(3, 3, 3);
+}
+
+.jumbotron p
+{
+    color: rgb(8, 8, 8);
+    margin-bottom: 5%;
+}
+
+/*------------------------------------*\
+	FOOTER
+\*------------------------------------*/
+
+footer
+{
+    background-color: rgba(36, 50, 59, 1);
+    padding-top: 2em;
+    padding-bottom: 1.2em;
+}
+
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer p
+{
+    color: #FFFFFF;
+}
+
+.social
+{
+    padding-top: 50px;
+}
