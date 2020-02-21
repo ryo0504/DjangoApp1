@@ -64,11 +64,10 @@ span.x4:before, i.x4:before
     color: rgb(3, 3, 3);
 }
 
-.jumbotron p
-{
-    color: rgb(8, 8, 8);
+.jumbotron p {
     margin-bottom: 5%;
 }
+
 
 /*------------------------------------*\
 	FOOTER
