@@ -6,4 +6,5 @@ app_name = 'board'
 
 urlpatterns = [
     path('lp/', views.Lp.as_view(), name='lp'),
+    path('posts/', views.PostList.as_view(), name = 'post_list'),
 ]
