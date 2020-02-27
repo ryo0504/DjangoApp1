@@ -1,0 +1,26 @@
+{% extends "board/base.html" %}
+
+{% block title %}User Update{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>ユーザー編集</h1>
+            <form method="post" enctype="multipart/form-data" action="">
+                {% csrf_token %}
+                <dl class="row">
+                    <dt class="col-sm-3">ユーザー名</dt>
+                    <dd class="col-sm-9">{{ form.name }}</dd>
+                    <dt class="col-sm-3">メールアドレス</dt>
+                    <dd class="col-sm-9">{{ form.email }}</dd>
+                    <dt class="col-sm-3">プロフィール画像</dt>
+                    <dd class="col-sm-9">{{ form.picture }}</dd>
+                </dl>
+                <button type="submit" class="btn btn-primary">送信</button>
+            </form>
+        </div>
+    </div><!-- /container -->
+</div>
+{% endblock content %}

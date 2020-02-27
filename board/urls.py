@@ -11,4 +11,6 @@ urlpatterns = [
     path('sign_up/', views.SignUpView.as_view(), name='sign_up'),
     path('', views.Login.as_view(), name = "login"),
     path('logout', django_auth_views.LogoutView.as_view(), name = "logout"),
+    path("users/<int:pk>/", views.UserDetailView.as_view(), name="user_detail"),
+    path("users/<int:pk>/update/", views.UserUpdateView.as_view(), name="user_update"),
 ]

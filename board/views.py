@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, resolve_url
 from django.views import generic
 from .models import *
 from django.contrib.auth.views import LoginView 
 from .forms import * 
 from django.contrib.auth import login
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from .forms import SignUpForm
 from .models import User
 
@@ -36,3 +36,16 @@ class SignUpView(generic.CreateView):
         login(self.request, user)
         return reverse('board:post_list')
     
+
+class UserDetailView(generic.DetailView):
+    model = User
+    template_name = 'board/user_detail.html'
+    
+
+class UserUpdateView(generic.UpdateView):
+    model = User
+    template_name = "board/user_update.html"
+    form_class = UserForm
+
+    def get_success_url(self):
+        return reverse_lazy('board:user_detail', kwargs={"pk":self.kwargs["pk"]})
