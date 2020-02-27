@@ -1,0 +1,42 @@
+{% extends "board/base.html" %}
+
+{% block title %}login{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <div class="jumbotron">
+            <div class="card card-container">
+                <form class="form-signin" action="" method="post">
+                    {{ form.non_field_errors }}
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        </div>
+                        {{ form.username }}
+                    </div>
+                    {{ form.email.errors }}      
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        </div>
+                        {{ form.password }}
+                    </div>          
+                    <div id="remember" class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                    </div>
+                    {{ form.password.error }}
+                    {% csrf_token %}
+                    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                </form><!-- /form -->
+                <a href="#" class="forgot-password">
+                    Forgot the password?
+                </a>
+            </div><!-- /card-container -->
+        </div>
+    </div><!-- /container -->
+</div>
+{% endblock content %}
