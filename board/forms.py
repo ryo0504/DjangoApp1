@@ -28,3 +28,10 @@ class SignUpForm(UserCreationForm):
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
             field.widget.attrs['placeholder'] = field.label
+
+
+class UserForm(forms.ModelForm):
+
+    class Meta:
+        model = User
+        fields = ("name", "email", "picture")
