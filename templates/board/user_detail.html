@@ -1,0 +1,24 @@
+{% extends "board/base.html" %}
+
+{% block title %}login{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>ユーザー詳細</h1>
+            <dl class="row">
+                <dt class="col-sm-3">ユーザー名</dt>
+                <dd class="col-sm-9">{{ user.name }}</dd>
+                <dt class="col-sm-3">メールアドレス</dt>
+                <dd class="col-sm-9">{{ user.email }}</dd>
+                <dt class="col-sm-3">プロフィール画像</dt>
+                <dd class="col-sm-9"><img src="/../../media/{{ user.picture }}" width="128" height="128" alt="プロフィール画像"></dd>
+                <dt class="col-sm-3">アカウント作成日</dt>
+                <dd class="col-sm-9">{{ user.date_joined }}</dd>
+            </dl>
+        </div>
+    </div><!-- /container -->
+</div>
+{% endblock content %}

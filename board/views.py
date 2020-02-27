@@ -36,3 +36,7 @@ class SignUpView(generic.CreateView):
         login(self.request, user)
         return reverse('board:post_list')
     
+
+class UserDetailView(generic.DetailView):
+    model = User
+    template_name = 'board/user_detail.html'
