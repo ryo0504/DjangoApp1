@@ -11,14 +11,21 @@
             <dl class="row">
                 <dt class="col-sm-3">ユーザー名</dt>
                 <dd class="col-sm-9">{{ user.name }}</dd>
+                {% if user.pk == request.user.pk %}
                 <dt class="col-sm-3">メールアドレス</dt>
+                {% endif %}
                 <dd class="col-sm-9">{{ user.email }}</dd>
                 <dt class="col-sm-3">プロフィール画像</dt>
-                <dd class="col-sm-9"><img src="/../../media/{{ user.picture }}" width="128" height="128" alt="プロフィール画像"></dd>
+                <dd class="col-sm-9"><img src="/../../media/{{ user.picture }}" width="128" height="128" alt="プロフィール画像">
+                </dd>
                 <dt class="col-sm-3">アカウント作成日</dt>
                 <dd class="col-sm-9">{{ user.date_joined }}</dd>
             </dl>
+            {% if user.pk == request.user.pk %}
             <a class="btn btn-info btn-lg" role="button" href="{% url 'board:user_update' user.pk  %}">編集</a>
+            {% else %}
+            <a class="btn btn-info btn-lg" role="button" href="{% url 'board:post_list' %}">戻る</a>
+            {% endif %}
         </div>
     </div><!-- /container -->
 </div>

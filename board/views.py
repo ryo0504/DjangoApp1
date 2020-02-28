@@ -8,6 +8,7 @@ from django.urls import reverse, reverse_lazy
 from .forms import SignUpForm
 from .models import User
 from .mixins import OnlyUserMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -38,7 +39,7 @@ class SignUpView(generic.CreateView):
         return reverse('board:post_list')
     
 
-class UserDetailView(generic.DetailView):
+class UserDetailView(LoginRequiredMixin, generic.DetailView):
     model = User
     template_name = 'board/user_detail.html'
     
