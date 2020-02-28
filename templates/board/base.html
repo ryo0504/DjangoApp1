@@ -1,6 +1,6 @@
 {% load i18n static %}
 <!DOCTYPE html>{% get_current_language as LANGUAGE_CODE %}
-<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+<html lang="{{ LANGUAGE_CODE|default:"ja" }}">
 
 <head>
     <meta charset="UTF-8">
@@ -8,24 +8,24 @@
     <link rel="stylesheet" href="{% static 'board/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'board/css/style.css' %}">
     {% block extra_css %}{% endblock %}
-    <title>{% block title %}My books{% endblock %}</title>
+    <title>{% block title %}Board App{% endblock %}</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'board:lp' %}">Board App</a>
+            <a class="navbar-brand app-name" href="{% url 'board:lp' %}">Board App</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'board:sign_up' %}">Signup</a>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'board:sign_up' %}">Signup</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'board:login' %}">Login</a>
+                        <a class="nav-link text-white" href="{% url 'board:login' %}">Login</a>
                     </li>
                 </ul>
             </div>
@@ -42,9 +42,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h3>Your Logo</h3>
+                    <a class="text-white" href="{% url 'board:lp' %}">Board App</a>
                     <p>© 2016 Your Company. Designed and Developed by <a target="_blank"
-                            href="http://www.themeinthebox.com">ThemeintheBox.com</a></p>
+                            href="#">company name</a></p>
                 </div>
             </div>
         </div>

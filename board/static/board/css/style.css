@@ -47,6 +47,13 @@ span.x4:before, i.x4:before
 
 
 /*------------------------------------*\
+	header
+\*------------------------------------*/
+.nav-link {
+    color: #fff;
+}
+
+/*------------------------------------*\
 	lp
 \*------------------------------------*/
 
@@ -84,11 +91,10 @@ span.x4:before, i.x4:before
 
 .btn {
     font-weight: 700;
-    height: 50px;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    cursor: default;
+    cursor: pointer;
 }
 
 .card {
