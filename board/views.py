@@ -7,6 +7,7 @@ from django.contrib.auth import login
 from django.urls import reverse, reverse_lazy
 from .forms import SignUpForm
 from .models import User
+from .mixins import OnlyUserMixin
 
 
 # Create your views here.
@@ -42,7 +43,7 @@ class UserDetailView(generic.DetailView):
     template_name = 'board/user_detail.html'
     
 
-class UserUpdateView(generic.UpdateView):
+class UserUpdateView(OnlyUserMixin, generic.UpdateView):
     model = User
     template_name = "board/user_update.html"
     form_class = UserForm
