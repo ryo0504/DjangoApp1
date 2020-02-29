@@ -7,6 +7,7 @@ from django.core.validators import MinLengthValidator
 from django.utils.translation import ugettext_lazy
 
 from .models import User
+from .models import Thread
 
 
 class LoginForm(AuthenticationForm):
@@ -35,3 +36,5 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ("name", "email", "picture")
+
+
