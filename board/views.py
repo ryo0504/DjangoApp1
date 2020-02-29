@@ -5,8 +5,9 @@ from django.contrib.auth.views import LoginView
 from .forms import * 
 from django.contrib.auth import login
 from django.urls import reverse, reverse_lazy
-from .forms import SignUpForm
+from .forms import SignUpForm, ThreadForm
 from .models import User
+from .models import Thread
 from .mixins import OnlyUserMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -51,3 +52,14 @@ class UserUpdateView(OnlyUserMixin, generic.UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('board:user_detail', kwargs={"pk":self.kwargs["pk"]})
+
+
+class ThreadCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Thread
+    template_name = "board/thread/create.html"
+    form_class = ThreadForm
+    success_url = reverse_lazy("board:post_list")
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)

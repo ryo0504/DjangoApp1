@@ -38,3 +38,8 @@ class UserForm(forms.ModelForm):
         fields = ("name", "email", "picture")
 
 
+class ThreadForm(forms.ModelForm):
+
+    class Meta:
+        model = Thread
+        fields = ("title",)

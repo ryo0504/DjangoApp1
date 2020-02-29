@@ -13,4 +13,5 @@ urlpatterns = [
     path('logout', django_auth_views.LogoutView.as_view(), name = "logout"),
     path("users/<int:pk>/", views.UserDetailView.as_view(), name="user_detail"),
     path("users/<int:pk>/update/", views.UserUpdateView.as_view(), name="user_update"),
+    path("thread/create/", views.ThreadCreateView.as_view(), name="thread_create"),
 ]
