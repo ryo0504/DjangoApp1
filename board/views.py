@@ -58,8 +58,34 @@ class ThreadCreateView(LoginRequiredMixin, generic.CreateView):
     model = Thread
     template_name = "board/thread/create.html"
     form_class = ThreadForm
-    success_url = reverse_lazy("board:post_list")
+    success_url = reverse_lazy("board:thread_list")
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+
+class ThreadListView(LoginRequiredMixin, generic.ListView):
+    model = Thread
+    template_name = "board/thread/thread_list.html"
+
+
+class ThreadDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Thread
+    template_name = "board/thread/thread_detail.html"
+
+
+class ThreadUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Thread
+    template_name = "board/thread/thread_update.html"
+    form_class = ThreadForm
+
+    def get_success_url(self):
+        return resolve_url('board:thread_list')
+
+
+class ThreadDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Thread
+    template_name = "board/thread/delete.html"
+    success_url = reverse_lazy("board:thread_list")
+

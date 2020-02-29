@@ -1,0 +1,25 @@
+{% extends "board/base.html" %}
+
+{% block title %}thread{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <h1>スレッド一覧</h1>
+        <a href="{% url 'board:thread_create' %}">スレッド作成</a>
+        <div class="card-columns">
+            {% for thread in thread_list %}
+            <a href="{% url 'board:thread_detail' thread.pk %}" class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ thread.title }}</h5>
+                    <div>
+                        <small class="text-muted">作成者: {{ thread.user.name }}</small>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div><!-- /container -->
+</div>
+{% endblock content %}

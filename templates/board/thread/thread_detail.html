@@ -1,0 +1,25 @@
+{% extends "board/base.html" %}
+
+{% block title %}User Update{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>スレッド詳細</h1>
+            <dl class="row">
+                <dt class="col-sm-3">スレッド名</dt>
+                <dd class="col-sm-9">{{ thread.title }}</dd>
+                <dt class="col-sm-3">ユーザー名</dt>
+                <dd class="col-sm-9"><a href="{% url 'board:user_detail' user.pk  %}">{{ thread.user.name }}</a></dd>
+                <dt class="col-sm-3">プロフィール画像</dt>
+                <dd class="col-sm-9"><img src="/../../../media/{{ user.picture }}" width="128" height="128"
+                        alt="プロフィール画像">
+            </dl>
+            <a class="btn btn-info btn-lg" role="button" href="{% url 'board:thread_update' thread.pk  %}">スレッド名を編集</a>
+            <a class="btn btn-danger btn-lg" role="button" href="{% url 'board:thread_delete' thread.pk  %}">スレッドを削除</a>
+        </div>
+    </div><!-- /container -->
+</div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "board/base.html" %}
+
+{% block title %}thread{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <h1>スレッド編集</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-info">送信</button>
+        </form>
+    </div><!-- /container -->
+</div>
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "board/base.html" %}
+
+{% block title %}User Update{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>スレッド削除</h1>
+            <form method="post">
+                {% csrf_token %}
+                <p>スレッド "{{ thread.title }}" を本当に削除してもよろしいですか？</p>
+                <button type="submit" class="btn btn-danger btn-lg">確認</button>
+              </form>
+        </div>
+    </div><!-- /container -->
+</div>
+{% endblock content %}
