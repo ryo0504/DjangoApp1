@@ -5,6 +5,10 @@ body {
     padding-top: 100px;
 }
 
+li {
+    list-style-type: none;
+}
+
 h1, h2, h3, h4, h5, h6
 {
     font-family: 'Roboto Slab', serif;
@@ -47,6 +51,13 @@ span.x4:before, i.x4:before
 
 
 /*------------------------------------*\
+	header
+\*------------------------------------*/
+.nav-link {
+    color: #fff;
+}
+
+/*------------------------------------*\
 	lp
 \*------------------------------------*/
 
@@ -84,11 +95,10 @@ span.x4:before, i.x4:before
 
 .btn {
     font-weight: 700;
-    height: 50px;
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    cursor: default;
+    cursor: pointer;
 }
 
 .card {

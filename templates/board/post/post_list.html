@@ -1,0 +1,26 @@
+{% extends "board/base.html" %}
+
+{% block title %}Create Post{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1>投稿一覧：{{ thread.title }}</h1>
+            <ul>
+                {% for post in post_list %}
+                <li><a href="{% url 'board:post_detail' pk=post.pk thread_pk=thread.pk %}">本文：{{ post.message }}</a></li>
+                <li>投稿日時：{{ post.created_at }}</li>
+                <li>投稿者：{{ post.user }}</li>
+                {% endfor %}
+            </ul>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-info btn-lg">送信</button>
+            </form>
+        </div>
+    </div><!-- /container -->
+</div>
+{% endblock content %}
