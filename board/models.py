@@ -85,3 +85,11 @@ class Thread(models.Model):
     def __str__(self):
         return self.title
 
+class Post(models.Model):
+    message = models.TextField(max_length=500)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post_user')
+    thread = models.ForeignKey(Thread, on_delete=models.CASCADE, related_name='thread') # postは１つのthreadに所属する。threadには複数のpostが所属する。１対n構造
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.message
