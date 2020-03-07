@@ -19,6 +19,7 @@
             </dl>
             <a class="btn btn-info btn-lg" role="button" href="{% url 'board:thread_update' thread.pk  %}">スレッド名を編集</a>
             <a class="btn btn-danger btn-lg" role="button" href="{% url 'board:thread_delete' thread.pk  %}">スレッドを削除</a>
+            <a class="btn btn-danger btn-lg" role="button" href="{% url 'board:post_list' thread.pk  %}">投稿する</a>
         </div>
     </div><!-- /container -->
 </div>

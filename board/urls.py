@@ -18,4 +18,6 @@ urlpatterns = [
     path("thread/<int:pk>/", views.ThreadDetailView.as_view(), name="thread_detail"),
     path("thread/<int:pk>/update", views.ThreadUpdateView.as_view(), name="thread_update"),
     path("thread/<int:pk>/delete", views.ThreadDeleteView.as_view(), name="thread_delete"),
+    path("thread/<int:pk>/post/post_list/", views.post_list, name="post_list"),
+    path("thread/<int:thread_pk>/post/<int:pk>/", views.PostDetailView.as_view(), name="post_detail"),
 ]
